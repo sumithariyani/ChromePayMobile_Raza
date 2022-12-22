@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoanApplyFormActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back_img_add_loan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/login_stuff_03" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loan Apply"
+            android:textSize="18dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#1b2243"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/back_img_add_loan"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:scaleType="fitEnd"
+            android:src="@drawable/login_stuff_31"
+            android:layout_alignParentEnd="true"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cust_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            android:layout_below="@+id/back_img_add_loan"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="10dp">
+
+            <RelativeLayout
+                android:id="@+id/parent_l_agent"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_04">
+
+
+                <TextView
+                    android:id="@+id/loan_cust_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/productsans_bold"
+                    android:text="Satyam Randawa"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+
+                <ImageView
+                    android:id="@+id/image_profile_loan"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/all_dids_06" />
+
+                <ImageView
+                    android:id="@+id/ic_email"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/login_stuff_04"
+                    android:layout_below="@+id/loan_cust_name"/>
+
+                <TextView
+                    android:id="@+id/email_loan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="satyam123@gmail.com"
+                    android:layout_marginHorizontal="5dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:textSize="16dp"
+                    android:layout_toRightOf="@+id/ic_email"
+                    android:layout_below="@+id/loan_cust_name"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <LinearLayout
+            android:id="@+id/org_select_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/cust_detail"
+            android:orientation="vertical"
+            android:elevation="5dp"
+            android:background="@drawable/date_filter_background">
+
+            <Spinner
+                android:id="@+id/org_select"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:spinnerMode="dropdown"
+                android:pointerIcon="context_menu"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/heading_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Types of Loans"
+            android:textSize="18dp"
+            android:layout_margin="10dp"
+            android:textColor="#1b2243"
+            android:textStyle="bold"
+            android:layout_below="@+id/org_select_l"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/type_loan_recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:fastScrollEnabled="false"
+            android:layout_marginEnd="10dp"
+            android:layout_below="@+id/heading_text"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="6"
+            tools:listitem="@layout/type_of_loan_recycle_layout" />
+
+    </RelativeLayout>
+</RelativeLayout>

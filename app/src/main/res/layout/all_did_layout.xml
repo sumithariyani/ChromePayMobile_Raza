@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp">
+
+    <RelativeLayout
+        android:id="@+id/parent_l_agent"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/bg_04">
+
+        <LinearLayout
+            android:id="@+id/did_l_all_did"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/service_card_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D-ID Ref. "
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/all_did_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1295123541"
+                android:textColor="@color/black"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/all_did_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/did_l_all_did"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/productsans_bold"
+            android:text="Satyam Randawa"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/ic_phone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/all_dids_10"
+            android:layout_below="@+id/all_did_name"/>
+
+        <TextView
+            android:id="@+id/phone_all_did"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="90094741569"
+            android:layout_marginHorizontal="3dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_toRightOf="@+id/ic_phone"
+            android:layout_below="@+id/all_did_name"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/image_profile_all_did"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/all_dids_06" />
+
+        </androidx.cardview.widget.CardView>
+
+<!--        <LinearLayout
+            android:id="@+id/verify_l"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ic_phone"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:background="@drawable/service_card_background">
+
+            <ImageView
+                android:id="@+id/image_check_uncheck"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/del_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ic_phone"
+            android:layout_toRightOf="@+id/verify_l"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:background="@drawable/service_card_background">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/all_dids_09" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_loans"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ic_phone"
+            android:layout_toRightOf="@+id/del_btn"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:background="@drawable/service_card_background">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/bank" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/face_reco"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ic_phone"
+            android:layout_toRightOf="@+id/add_loans"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:background="@drawable/service_card_background">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/facial_recognition" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/agent_wallet"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/ic_phone"
+            android:layout_toRightOf="@+id/face_reco"
+            android:layout_marginVertical="10dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:background="@drawable/service_card_background">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/wallet1" />
+
+        </LinearLayout>-->
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

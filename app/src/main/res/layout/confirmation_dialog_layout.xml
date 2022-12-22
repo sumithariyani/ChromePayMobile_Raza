@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerInParent="true"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#838080">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/service_card_background">
+
+        <TextView
+            android:id="@+id/text_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are You Sure"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@+id/text_apply"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loan_management1_06" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginBottom="10dp"
+            android:id="@+id/yes_btn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button_background"
+            app:backgroundTint="@null"
+            android:layout_above="@+id/no_btn"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:text="yes"/>
+
+
+        <TextView
+            android:id="@+id/no_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:layout_margin="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+           android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</RelativeLayout>

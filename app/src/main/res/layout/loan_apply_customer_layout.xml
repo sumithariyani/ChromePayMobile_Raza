@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp">
+
+        <RelativeLayout
+            android:id="@+id/parent_l_agent"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/bg_04">
+
+            <LinearLayout
+                android:id="@+id/did_l_lac"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/service_card_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D-ID Ref.######655"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="11-16-2022"
+                android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/lac_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/did_l_lac"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/productsans_bold"
+                android:text="Satyam Randawa"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/ic_phone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/all_dids_10"
+                android:layout_below="@+id/lac_name"/>
+
+            <TextView
+                android:id="@+id/phone_lac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="90094741569"
+                android:layout_marginHorizontal="3dp"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:layout_toRightOf="@+id/ic_phone"
+                android:layout_below="@+id/lac_name"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_pending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/image_profile_lac"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/all_dids_06" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pending_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ic_phone"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/pending_button_background"
+                android:text="Pending"
+                app:backgroundTint="@null" />
+
+            <ImageView
+                android:id="@+id/ic_next"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/card_view_pending"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/login_stuff_11" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

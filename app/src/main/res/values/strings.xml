@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ChromePayMobile</string>
+    <string name="text_1">Let’s Get\nStarted</string>
+    <string name="text_2">Lorem Ipsum has been the Lorem Ipsum has\nbeen the.</string>
+    <string name="text_3">Login\nCustomer</string>
+    <string name="text_4">Place your fingerprint on the \ndevice now.</string>
+    <string name="text_5">DID \n Created Successfully</string>
+    <string name="text_6">UfrVBqplEJ32zjG1hfJplEJ32zKs \n G1hUTfrjSDEJ32zfrlK- \n PG1h32zhghthtPGf</string>
+    <string name="text_7">We have sent DID to customer`s \n registered mobile number</string>
+    <string name="text_8">XP37+XCW, Addis \n Ababa, Ethiopia</string>
+    <string name="text_9">Proof of\n Residence</string>
+    <string name="text_10">Land\n Registration</string>
+    <string name="text_11">0xa28DAc09e9A8Ab98577a51eBaf448\n40a5A88b77A</string>
+    <string name="text_12">Your New Password Must Be Diffrent From \n Previously Used Password</string>
+    <string name="text_13">Move the controller to select the number of months \n with in which you can repay the amount</string>
+    <string name="text_14">Select the day which you’ll be able to \n make the payment every month.</string>
+    <string name="text_15">Payment \n Successfull</string>
+    <string name="text_16">This customer have is already \n part of other organisation \n are you want to linked service</string>
+    <string name="text_17">Please wait while we \n  scan your face </string>
+    <string name="api_key">AIzaSyCdkMLmt8vv54OmKcp4c174eK4t7J1Xgzk </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_loan_request">LoanRequestActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>

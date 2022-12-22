@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerLoginActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="fitEnd"
+        android:src="@drawable/login_stuff_31"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:id="@+id/back_img_cl"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/login_stuff_03" />
+
+    <ImageView
+        android:id="@+id/app_icon_2_cl"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/back_img_cl"
+        android:src="@drawable/login_stuff_02" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_3"
+        android:textColor="@color/black"
+        android:fontFamily="@font/productsans_medium"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:textSize="30dp"
+        android:layout_below="@+id/app_icon_2_cl"/>
+
+    <TextView
+        android:id="@+id/customer_id_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/productsans_medium"
+        android:layout_marginVertical="10dp"
+        android:text="Customer Id"
+        android:textSize="16dp"
+        android:textColor="#A3A3A3"
+        android:layout_below="@+id/welcome_text"/>
+
+    <LinearLayout
+        android:layout_below="@+id/customer_id_tv"
+        android:layout_width="match_parent"
+        android:id="@+id/edit_cl"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/login_stuff_15"/>
+
+        <EditText
+            android:id="@+id/et_customer_id"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="text"
+            android:layout_gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeStepGranularity="2sp"
+            android:background="@null"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Enter Customer DID"/>
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/edit_cl"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/black"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_btn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="@null"
+            android:textSize="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/login_button_background"
+            android:text="Submit" />
+
+        <TextView
+            android:id="@+id/register_customer_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/submit_btn"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:fontFamily="@font/opensans_regular"
+            android:text="Register Customer"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

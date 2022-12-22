@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.LandRegistrationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/personal_info_background">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profile_lr"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="20dp"
+                android:src="@drawable/profile_01"/>
+
+            <TextView
+                android:id="@+id/fullNmae"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jessica Chinara"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:fontFamily="@font/productsans_medium"
+                android:layout_above="@+id/phone_no_lr"
+                android:layout_toRightOf="@+id/image_profile_lr"/>
+
+            <ImageView
+                android:id="@+id/phone_no_icon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/home_page_icon_20"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/image_profile_lr"
+                />
+
+            <TextView
+                android:id="@+id/phone_no_lr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+234 123-456-7890"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:textSize="12dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_toRightOf="@+id/phone_no_icon"/>
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/service_card_background"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/service_card_background"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp">
+
+            <ImageView
+                android:id="@+id/finger_print_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/address__1_"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/finger_print_img"/>
+
+            <ImageView
+                android:id="@+id/finger_print_c_uc"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Land Owner :"
+                    android:layout_weight="1"
+                    android:textColor="#98A6F4"/>
+
+                <TextView
+                    android:id="@+id/land_owner_cus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sumit"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact :"
+                    android:layout_weight="1"
+                    android:textColor="#98A6F4"/>
+
+                <TextView
+                    android:id="@+id/contact_cus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+91 7828418144"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Land Size :"
+                    android:layout_weight="1"
+                    android:textColor="#98A6F4"/>
+
+                <TextView
+                    android:id="@+id/land_size_cus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address :"
+                    android:layout_weight="1"
+                    android:textColor="#98A6F4"/>
+
+                <TextView
+                    android:id="@+id/address_cus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_8"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/land_certify_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="5dp"
+                android:background="@drawable/ni_pr_button_background">
+
+                <ImageView
+                    android:id="@+id/lc_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_gravity="center"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/home_page_icon_25"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/lc_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Land Certificate"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

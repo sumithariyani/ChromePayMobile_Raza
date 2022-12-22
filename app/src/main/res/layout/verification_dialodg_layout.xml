@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#838080"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/service_card_background"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/dis_dialog_loan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/login_stuff_28"
+            android:layout_gravity="end"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verification Code"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sent to customer mobile no"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter the 6 Digit OTP"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/otp_edit_background"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:textColor="@color/white"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/otp_edit_background"/>
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:textColor="@color/white"
+                    android:inputType="number"
+                    android:layout_margin="3dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/otp_edit_background"/>
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/otp_edit_background"/>
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/otp_edit_background"/>
+
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:maxLength="1"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/otp_edit_background"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/timer_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resend code after 00 sec"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="center"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:gravity="bottom">
+
+                <LinearLayout
+                    android:id="@+id/resend_code_l"
+                    android:layout_above="@+id/verify_did_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Didn`t receive it? "/>
+
+                    <TextView
+                        android:id="@+id/click_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Click here"
+                        android:textStyle="bold"
+                        android:textColor="#104BDD"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/verify_did_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+                    app:backgroundTint="@null"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="16dp"
+                    android:background="@drawable/login_button_background"
+                    android:text="Verify DID" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_verify"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/teal_700" />
+
+</RelativeLayout>

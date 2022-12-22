@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgentPerformenceActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_img_ap"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/login_stuff_03" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agent Performance"
+                android:textSize="18dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#1b2243"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/back_img_ap"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_agent"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardElevation="10dp"
+                android:layout_below="@+id/back_img_ap"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginHorizontal="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/parent_l_agent"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/bg_04">
+
+                    <LinearLayout
+                        android:id="@+id/agent_l_ap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/agent_name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/opensans_semibold"
+                            android:text="Satyam Randawa"
+                            android:textColor="@color/white"
+                            android:textSize="18dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/agent_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/agent_l_ap"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginHorizontal="2.5dp"
+                        android:src="@drawable/agent_dashboard_stuff_04"/>
+
+                    <TextView
+                        android:id="@+id/agent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/agent_image"
+                        android:layout_below="@+id/agent_l_ap"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginHorizontal="2.5dp"
+                        android:text="Agent"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/productsans_medium"/>
+
+                    <ImageView
+                        android:id="@+id/location_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_toRightOf="@+id/agent_text"
+                        android:layout_below="@+id/agent_l_ap"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginHorizontal="2.5dp"
+                        android:src="@drawable/home_page_icon_19"/>
+
+                    <TextView
+                        android:id="@+id/agent_location_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/location_image"
+                        android:layout_below="@+id/agent_l_ap"
+                        android:text="India"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/productsans_medium"/>
+
+                    <ImageView
+                        android:id="@+id/ic_email"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/login_stuff_04"
+                        android:layout_below="@+id/agent_image"/>
+
+                    <TextView
+                        android:id="@+id/email_ap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="satyam123@gmail.com"
+                        android:layout_marginHorizontal="5dp"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_centerVertical="true"
+                        android:textSize="16dp"
+                        android:layout_toRightOf="@+id/ic_email"
+                        android:layout_below="@+id/agent_image"/>
+
+                    <ImageView
+                        android:id="@+id/image_profile_all_did"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/all_dids_06" />
+
+                    <RelativeLayout
+                        android:id="@+id/verify_l"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ic_email"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/agent_performance_status_background">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/agent_perfomance_06"
+                            android:layout_centerInParent="true"
+                            android:layout_toLeftOf="@+id/up_status_text"/>
+
+                        <TextView
+                            android:id="@+id/up_status_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginHorizontal="10dp"
+                            android:fontFamily="@font/opensans_semibold"
+                            android:text="42"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/up_status_text"
+                            android:text="Total User"
+                            android:textSize="10dp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/del_btn"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/ic_email"
+                        android:layout_toRightOf="@+id/verify_l"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/agent_performance_status_background">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/agent_perfomance_07"
+                            android:layout_centerInParent="true"
+                            android:layout_toLeftOf="@+id/down_status_text"/>
+
+                        <TextView
+                            android:id="@+id/down_status_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="264906"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/opensans_semibold"
+                            android:textSize="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/down_status_text"
+                            android:text="Total Transaction"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center"
+                            android:textSize="10dp"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/card_view_agent"
+                android:layout_centerInParent="true"
+                android:layout_margin="10dp" />
+
+        </RelativeLayout>
+</RelativeLayout>

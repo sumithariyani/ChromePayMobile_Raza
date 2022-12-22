@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/card_ms1"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/register_card_background"
+        android:elevation="5dp">
+
+        <ImageView
+            android:id="@+id/mic_ic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/login_stuff_09" />
+
+
+        <TextView
+            android:id="@+id/mic_service_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Micro Insurance"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/mic_ic"/>
+
+        <TextView
+            android:id="@+id/lorem_tv_ms1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_2"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            android:layout_toRightOf="@+id/mic_ic"
+            android:layout_below="@+id/mic_service_tv"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/login_stuff_10"/>
+    </RelativeLayout>
+
+</LinearLayout>

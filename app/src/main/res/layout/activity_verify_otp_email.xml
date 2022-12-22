@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerifyOtpEmail">
+
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/login_stuff_03" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Email"
+        android:textSize="18dp"
+        android:layout_marginTop="15dp"
+        android:textColor="#1b2243"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/back_img"/>
+
+    <ImageView
+        android:id="@+id/app_icon_2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/back_img"
+        android:src="@drawable/login_stuff_02" />
+
+    <RelativeLayout
+        android:id="@+id/otp_tv_l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_icon_2"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Enter The 6 Digit OTP"
+            android:textColor="#CDD6EF"
+            android:fontFamily="@font/productsans_bold"/>
+
+        <TextView
+            android:id="@+id/text_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sent To "
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/text_view"
+            android:textColor="#CDD6EF"
+            android:fontFamily="@font/productsans_bold"/>
+
+        <TextView
+            android:id="@+id/text_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" lorem@gmail.com"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/text_view"
+            android:layout_toRightOf="@+id/text_view1"
+            android:textColor="#CDD6EF"
+            android:fontFamily="@font/productsans_bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/otp_l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/otp_tv_l"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:layout_margin="3dp"
+            android:background="@drawable/otp_edit_background"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:layout_margin="3dp"
+            android:background="@drawable/otp_edit_background"/>
+
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:inputType="number"
+            android:layout_margin="3dp"
+            android:textAlignment="center"
+            android:background="@drawable/otp_edit_background"/>
+
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_margin="3dp"
+            android:background="@drawable/otp_edit_background"/>
+
+        <EditText
+            android:id="@+id/et5"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_margin="3dp"
+            android:background="@drawable/otp_edit_background"/>
+
+        <EditText
+            android:id="@+id/et6"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:layout_margin="3dp"
+            android:background="@drawable/otp_edit_background"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Resend OTP after 00 sec"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/otp_l"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/productsans_bold"/>
+
+    <LinearLayout
+        android:layout_above="@+id/verify_opt_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn`t receive it? "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Click here"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="#104BDD"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verify_opt_btn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        app:backgroundTint="@null"
+        android:textSize="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/login_button_background"
+        android:text="Verify" />
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/login_stuff_30"
+        android:scaleType="fitEnd"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

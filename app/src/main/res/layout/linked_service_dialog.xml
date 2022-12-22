@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#838080">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/service_card_background">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/handshake_06"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This customer already has an active D-ID. Would you like to link it to other services?"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_marginHorizontal="40dp"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_centerInParent="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_marginBottom="10dp"
+            android:id="@+id/yes_btn_ls"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button_background"
+            app:backgroundTint="@null"
+            android:layout_above="@+id/cancel__btn"
+            android:layout_centerHorizontal="true"
+            android:textSize="16dp"
+            android:text="yes"/>
+
+        <TextView
+            android:id="@+id/cancel__btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginBottom="20dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

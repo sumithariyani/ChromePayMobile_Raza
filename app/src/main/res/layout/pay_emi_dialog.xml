@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#838080"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/service_card_background">
+
+
+        <TextView
+            android:id="@+id/start_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your EMI Amount"
+            android:layout_marginVertical="40dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/opensans_regular"/>
+
+        <TextView
+            android:id="@+id/amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Amount is 267500"
+            android:layout_below="@+id/start_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/opensans_regular"/>
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:background="@drawable/pay_amount_edit_background">
+
+            <EditText
+                android:id="@+id/amount_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_centerVertical="true"
+                android:inputType="number"
+                android:hint="Enter Your Amount"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/pay_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            app:backgroundTint="@null"
+            android:textSize="18dp"
+            android:background="@drawable/login_button_background"
+            android:text="Pay"
+            android:layout_above="@+id/cancel_text"/>
+
+        <TextView
+            android:id="@+id/cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
