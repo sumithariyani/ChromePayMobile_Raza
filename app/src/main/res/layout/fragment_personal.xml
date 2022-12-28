@@ -243,9 +243,9 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Date of Birth"
                                 android:layout_weight="1"
-                                android:textColor="#98A6F4"/>
+                                android:text="Date of Birth"
+                                android:textColor="#98A6F4" />
 
                             <TextView
                                 android:id="@+id/dob_cus_tv"

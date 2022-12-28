@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AwatingDidActivity">
-<androidx.core.widget.NestedScrollView
+
+    <TextView
+        android:id="@+id/nodata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fgfggfhfg"
+        android:textSize="20dp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:fontFamily="@font/productsans_bold"
+        android:gravity="center"
+        android:layout_centerVertical="true"/>
+
+    <androidx.core.widget.NestedScrollView
     android:id="@+id/ns"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -40,6 +53,7 @@
             android:scaleType="fitEnd"
             android:src="@drawable/login_stuff_31"
             android:layout_alignParentEnd="true"/>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/awating_did_recycle"

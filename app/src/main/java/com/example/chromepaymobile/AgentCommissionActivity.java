@@ -68,6 +68,7 @@ public class AgentCommissionActivity extends AppCompatActivity {
         final Calendar calendar = Calendar.getInstance();
 
         AgentCommission(page,limit);
+        AgentCommissionNodate(page, limit);
 
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +113,7 @@ public class AgentCommissionActivity extends AppCompatActivity {
 
                     page++;
                     AgentCommission(page,limit);
+                    AgentCommissionNodate(page,limit);
                 }
             }
         });
@@ -161,8 +163,6 @@ public class AgentCommissionActivity extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(response);
 
                         boolean status = jsonObject.getBoolean("status");
-                        int totlaRow = jsonObject.getInt("totlaRow");
-                        String currenPage = jsonObject.getString("currenPage");
 
                         JSONArray filter = jsonObject.getJSONArray("filter");
                         if (status == true){
@@ -234,4 +234,100 @@ public class AgentCommissionActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void AgentCommissionNodate(int page, int limit){
+
+        try {
+
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("page",page);
+
+            final String mRequestBody = jsonBody.toString();
+
+            SharedPreferences sharedPreferences = getSharedPreferences("LoginPreferences",MODE_PRIVATE);
+            String token = sharedPreferences.getString("token","");
+
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, AllUrl.AgentCommission+token, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.i("AGENT_COMMISSION_VOLLEY", response);
+
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+
+                        boolean status = jsonObject.getBoolean("status");
+
+                        JSONArray filter = jsonObject.getJSONArray("filter");
+                        if (status == true){
+
+                            for (int i=0; i<filter.length(); i++){
+                                try {
+                                    JSONObject object = filter.getJSONObject(i);
+
+                                    String _id = object.getString("_id");
+                                    String custPhoto = object.getString("custPhoto");
+                                    String agentID = object.getString("agentID");
+                                    String custID = object.getString("custID");
+                                    String custName = object.getString("custName");
+                                    String commission = object.getString("commission");
+                                    String createdAt = object.getString("createdAt");
+
+                                    AgentCommissionModel agentCommissionModel = new AgentCommissionModel();
+                                    agentCommissionModel.setImg(custPhoto);
+                                    agentCommissionModel.setName(custName);
+                                    agentCommissionModel.setCommission(commission);
+                                    agentCommissionModel.setDate(createdAt.substring(0,10));
+                                    agentList.add(agentCommissionModel);
+                                    agentCommissionAdapter = new AgentCommissionAdapter(agentList,AgentCommissionActivity.this);
+                                    commissionRecycle.setAdapter(agentCommissionAdapter);
+                                    agentCommissionAdapter.notifyDataSetChanged();
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                            Toast.makeText(AgentCommissionActivity.this, ""+error, Toast.LENGTH_SHORT).show();
+                        }
+                    })
+            {
+                @Override
+                public String getBodyContentType() {
+                    return "application/json; charset=utf-8";
+                }
+
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return mRequestBody == null ? null : mRequestBody.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", mRequestBody, "utf-8");
+                        return null;
+                    }
+                }
+
+                @Override
+                protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                    int mStatusCode = response.statusCode;
+                    return super.parseNetworkResponse(response);
+                }
+            };
+            requestQueue.add(stringRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

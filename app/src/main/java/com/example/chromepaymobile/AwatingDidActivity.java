@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -38,6 +39,7 @@ public class AwatingDidActivity extends AppCompatActivity {
 
     RecyclerView awatingRecycle;
     ImageView backImage;
+    TextView noData;
     NestedScrollView nestedScrollView;
     int page = 0;
     int limit = 10;
@@ -54,6 +56,7 @@ public class AwatingDidActivity extends AppCompatActivity {
         awatingRecycle = findViewById(R.id.awating_did_recycle);
         backImage = findViewById(R.id.back_img_awating_did);
         nestedScrollView = findViewById(R.id.ns);
+        noData = findViewById(R.id.nodata);
 
         backImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +108,8 @@ public class AwatingDidActivity extends AppCompatActivity {
                             JSONArray jsonArray = jsonObject.getJSONArray("filter");
 
                             if (jsonArray.length()==0){
-                                Toast.makeText(AwatingDidActivity.this, "All customer has verify", Toast.LENGTH_LONG).show();
+                                noData.setText("No Pending Approval");
+                                noData.setVisibility(View.VISIBLE);
                             }
                             for (int i=0; i<jsonArray.length(); i++){
 
