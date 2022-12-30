@@ -41,7 +41,7 @@ public class AwatingDidActivity extends AppCompatActivity {
     ImageView backImage;
     TextView noData;
     NestedScrollView nestedScrollView;
-    int page = 0;
+    int page = 2;
     int limit = 10;
 
     AwatingDidAdapter awatingDidAdapter;
@@ -71,7 +71,7 @@ public class AwatingDidActivity extends AppCompatActivity {
             @Override
             public void onScrollChange(@NonNull NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
-                if (scrollY == v.getChildAt(0).getMeasuredHeight()-v.getMeasuredHeight()){
+                if (scrollY == v.getChildAt(2).getMeasuredHeight()-v.getMeasuredHeight()){
 
                     page++;
                     AwatingDidApi(page,limit);

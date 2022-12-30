@@ -842,7 +842,7 @@ public class RegisterCustomer3Activity extends AppCompatActivity {
                                 new Response.ErrorListener() {
                                     @Override
                                     public void onErrorResponse(VolleyError error) {
-
+                                        System.out.println("otp error " +error);
                                     }
                                 })
                         {
@@ -869,6 +869,11 @@ public class RegisterCustomer3Activity extends AppCompatActivity {
 
                         };
 
+                        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                                5000,
+                                1,
+                                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                        ));
                         requestQueue.add(stringRequest);
                     } catch (Exception e) {
                         e.printStackTrace();

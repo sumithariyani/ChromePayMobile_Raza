@@ -42,7 +42,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RegisterCustomer1Activity extends AppCompatActivity {
 
-    EditText editText1,editText2,editText3,etName,etMobile,etEmail,etNationality,etProfession,etNickName,etPhone;
+    EditText editText1,editText2,editText3,etName,etMobile,etEmail,etAge,etCity,etProfession,etNickName,etPhone;
     MaterialButton next_btn_frc1;
     RadioGroup radioGroup;
     SimpleDateFormat simpleDateFormat;
@@ -77,6 +77,8 @@ public class RegisterCustomer1Activity extends AppCompatActivity {
         etName = findViewById(R.id.et_name_fcr1);
         etMobile = findViewById(R.id.et_mobile_fcr1);
         etEmail = findViewById(R.id.et_email_fcr1);
+        etAge = findViewById(R.id.et_age_fcr1);
+        etCity = findViewById(R.id.et_city_fcr1);
         etProfession = findViewById(R.id.et_profession_fcr1);
         etNickName = findViewById(R.id.et_nick_name_fcr1);
         etPhone = findViewById(R.id.et_phone_no_fcr1);
@@ -209,6 +211,8 @@ public class RegisterCustomer1Activity extends AppCompatActivity {
                     intent.putExtra("DOB", editText1.getText().toString() + "-" + editText2.getText().toString() + "-" + editText3.getText().toString());
                     intent.putExtra("mobile", mobile_number);
                     intent.putExtra("email", etEmail.getText().toString());
+                    intent.putExtra("age", etAge.getText().toString());
+                    intent.putExtra("city", etCity.getText().toString());
                     intent.putExtra("gender", str);
                     intent.putExtra("nationality", NATIONALITY);
                     intent.putExtra("profession", etProfession.getText().toString());

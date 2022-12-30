@@ -347,6 +347,8 @@ public class AddressActivity extends FragmentActivity implements OnMapReadyCallb
                     map.put("dateOfBirth",getIntent().getStringExtra("DOB"));
                     map.put("phone",getIntent().getStringExtra("mobile"));
                     map.put("email",getIntent().getStringExtra("email"));
+                    map.put("age",getIntent().getStringExtra("age"));
+                    map.put("city",getIntent().getStringExtra("city"));
                     map.put("gender",getIntent().getStringExtra("gender"));
                     map.put("nationality",getIntent().getStringExtra("nationality"));
                     map.put("professoin",getIntent().getStringExtra("profession"));

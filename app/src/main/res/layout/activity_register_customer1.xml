@@ -316,6 +316,79 @@
                                 android:layout_height="1dp"
                                 android:background="#908D8D"/>
                         </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginVertical="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/login_stuff_17"/>
+
+                                <EditText
+                                    android:id="@+id/et_age_fcr1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:inputType="number"
+                                    android:layout_gravity="center"
+                                    android:autoSizeTextType="uniform"
+                                    android:autoSizeMinTextSize="12sp"
+                                    android:autoSizeMaxTextSize="100sp"
+                                    android:autoSizeStepGranularity="2sp"
+                                    android:background="@null"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:hint="Age"/>
+                            </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#908D8D"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginVertical="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/login_stuff_20"/>
+
+                                <EditText
+                                    android:id="@+id/et_city_fcr1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:inputType="text"
+                                    android:layout_gravity="center"
+                                    android:autoSizeTextType="uniform"
+                                    android:autoSizeMinTextSize="12sp"
+                                    android:autoSizeMaxTextSize="100sp"
+                                    android:autoSizeStepGranularity="2sp"
+                                    android:background="@null"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:hint="City"/>
+                            </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#908D8D"/>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"

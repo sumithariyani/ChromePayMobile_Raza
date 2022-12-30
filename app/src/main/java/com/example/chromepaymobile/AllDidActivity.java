@@ -41,7 +41,7 @@ public class AllDidActivity extends AppCompatActivity {
     AllDidAdapter allDidAdapter;
     ImageView backImage;
     NestedScrollView nestedScrollView;
-    int page = 0;
+    int page = 1;
     int limit = 10;
 
     @SuppressLint("MissingInflatedId")

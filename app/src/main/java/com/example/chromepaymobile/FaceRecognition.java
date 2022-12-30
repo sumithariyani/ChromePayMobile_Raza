@@ -60,8 +60,6 @@ import java.util.Map;
 
 public class FaceRecognition extends AppCompatActivity {
 
-
-
     private final int CAMERA_REQ_CODE = 100;
     Bitmap img;
     TextView msg_txt;
