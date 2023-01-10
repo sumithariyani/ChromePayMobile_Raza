@@ -41,7 +41,7 @@ public class AgentCommissionActivity extends AppCompatActivity {
 
     ImageView backImage;
     RecyclerView commissionRecycle;
-    TextView fromDate,toDate;
+    TextView fromDate,toDate,noData;
     NestedScrollView nestedScrollView;
     int year;
     int month;
@@ -64,6 +64,7 @@ public class AgentCommissionActivity extends AppCompatActivity {
         fromDate = findViewById(R.id.from_date_et);
         toDate = findViewById(R.id.to_date_tv);
         btn = findViewById(R.id.date_sub_btn);
+        noData = findViewById(R.id.nodata);
         nestedScrollView = findViewById(R.id.NestedSV);
         final Calendar calendar = Calendar.getInstance();
 
@@ -167,6 +168,17 @@ public class AgentCommissionActivity extends AppCompatActivity {
                         JSONArray filter = jsonObject.getJSONArray("filter");
                         if (status == true){
 
+                            if (filter.length() == 0){
+                                noData.setText("No data found");
+                                noData.setVisibility(View.VISIBLE);
+                                commissionRecycle.setVisibility(View.GONE);
+                                agentCommissionAdapter.notifyDataSetChanged();
+                            }else {
+                                commissionRecycle.setVisibility(View.VISIBLE);
+                                agentCommissionAdapter.notifyDataSetChanged();
+                                noData.setVisibility(View.GONE);
+
+                            }
                             for (int i=0; i<filter.length(); i++){
                                 try {
                                     JSONObject object = filter.getJSONObject(i);

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.chromepaymobile.AgencyBankingActivity;
 import com.example.chromepaymobile.AgentCommissionActivity;
 import com.example.chromepaymobile.AgentPerformenceActivity;
 import com.example.chromepaymobile.AllDidActivity;
@@ -106,7 +107,8 @@ public class ADBRecycleAdapter extends RecyclerView.Adapter<ADBRecycleAdapter.Vi
             holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, adbRecycleModel.getName()+" Coming soon", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, AgencyBankingActivity.class);
+                    context.startActivity(intent);
                 }
             });
         }

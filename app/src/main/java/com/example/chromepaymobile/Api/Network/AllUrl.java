@@ -88,6 +88,10 @@ public class AllUrl {
 
     public static final String ORGLinked = BaseUrl+"get_cust_orgs/";
 
+    public static final String CustomerView = BaseUrl+"send_cust_otp_data_view";
+
+    public static final String CustomerViewVerify = BaseUrl+"verify_cust_view_OTP";
+
 
 
 

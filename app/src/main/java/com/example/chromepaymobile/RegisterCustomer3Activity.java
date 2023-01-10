@@ -806,10 +806,7 @@ public class RegisterCustomer3Activity extends AppCompatActivity {
                                       /*  final Dialog dialog1 = new Dialog(RegisterCustomer3Activity.this, android.R.style.Theme_Translucent_NoTitleBar);
                                         View mView = getLayoutInflater().inflate(R.layout.did_success_dialog_layout, null);
 */
-
-                                        Intent intent = new Intent(RegisterCustomer3Activity.this, AgentDashActivity.class);
-                                        startActivity(intent);
-                                        finish();
+                                        SuccesDialog();
 /*
                                         MaterialButton ok = (MaterialButton) mView.findViewById(R.id.ok_btn);
 */
@@ -1048,6 +1045,38 @@ public class RegisterCustomer3Activity extends AppCompatActivity {
                 linkDialog.dismiss();
             }
         });
+        linkDialog.show();
+    }
+
+    public void SuccesDialog(){
+
+        final Dialog linkDialog = new Dialog(RegisterCustomer3Activity.this, android.R.style.Theme_Translucent_NoTitleBar);
+        View linkView = getLayoutInflater().inflate(R.layout.did_success_dialog_layout, null);
+
+
+        MaterialButton button = (MaterialButton) linkView.findViewById(R.id.ok_btn);
+        ImageView imageView = (ImageView) linkView.findViewById(R.id.dis_dialog);
+
+        linkDialog.setContentView(linkView);
+
+        progressBar.setVisibility(View.GONE);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterCustomer3Activity.this, AgentDashActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linkDialog.dismiss();
+            }
+        });
+
         linkDialog.show();
     }
 

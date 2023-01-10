@@ -56,13 +56,6 @@ public class AwatingDidAdapter extends RecyclerView.Adapter<AwatingDidAdapter.Vi
         holder.phone.setText(String.valueOf(awatingDIDModel.getPhone()));
         holder.awatingDid.setText(awatingDIDModel.getDid());
 
-        holder.verify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                VerifyApi(awatingDIDModel.getId());
-            }
-        });
-
         Picasso.get()
                 .load(awatingDIDModel.getPhoto())
                 .placeholder(R.drawable.all_dids_06)
@@ -79,7 +72,6 @@ public class AwatingDidAdapter extends RecyclerView.Adapter<AwatingDidAdapter.Vi
 
         TextView name,phone, awatingDid;
         ImageView profile;
-        LinearLayout verify;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,7 +79,6 @@ public class AwatingDidAdapter extends RecyclerView.Adapter<AwatingDidAdapter.Vi
             name = itemView.findViewById(R.id.awating_did_name);
             phone = itemView.findViewById(R.id.phone_awating_did);
             profile = itemView.findViewById(R.id.profile_img_awating_did);
-            verify = itemView.findViewById(R.id.verify_l_awating);
             awatingDid = itemView.findViewById(R.id.awating_did);
         }
 

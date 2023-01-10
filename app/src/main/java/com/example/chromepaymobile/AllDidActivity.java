@@ -96,7 +96,7 @@ public class AllDidActivity extends AppCompatActivity {
 
                     try {
                         JSONObject jsonObject = new JSONObject(response);
-                        boolean status = jsonObject.getBoolean("statussss");
+                        boolean status = jsonObject.getBoolean("status");
 
                         if (status == true){
 

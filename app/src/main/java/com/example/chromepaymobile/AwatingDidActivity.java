@@ -41,7 +41,7 @@ public class AwatingDidActivity extends AppCompatActivity {
     ImageView backImage;
     TextView noData;
     NestedScrollView nestedScrollView;
-    int page = 2;
+    int page = 1;
     int limit = 10;
 
     AwatingDidAdapter awatingDidAdapter;
@@ -71,7 +71,7 @@ public class AwatingDidActivity extends AppCompatActivity {
             @Override
             public void onScrollChange(@NonNull NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
-                if (scrollY == v.getChildAt(2).getMeasuredHeight()-v.getMeasuredHeight()){
+                if (scrollY == v.getChildAt(0).getMeasuredHeight()-v.getMeasuredHeight()){
 
                     page++;
                     AwatingDidApi(page,limit);
@@ -89,19 +89,20 @@ public class AwatingDidActivity extends AppCompatActivity {
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("page",page);
 
+            System.out.println("jsonBody " + jsonBody);
             final String mRequestBody = jsonBody.toString();
 
             SharedPreferences sharedPreferences = getSharedPreferences("LoginPreferences",MODE_PRIVATE);
             String token = sharedPreferences.getString("token","");
             System.out.println("123544"+token);
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, AllUrl.AwatingDid + token, new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, AllUrl.AwatingDid+token, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     Log.i("AWATING_DID_VOLLEY", response);
 
                     try {
                         JSONObject jsonObject = new JSONObject(response);
-                        boolean status = jsonObject.getBoolean("statussss");
+                        boolean status = jsonObject.getBoolean("status");
 
                         if (status == true){
 
@@ -134,7 +135,6 @@ public class AwatingDidActivity extends AppCompatActivity {
                                 awatingDidAdapter.notifyDataSetChanged();
                             }
                         }
-
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

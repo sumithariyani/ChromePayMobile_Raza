@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgencyBankingActivity">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_img_agency"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/login_stuff_03" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agency Banking"
+                android:textSize="18dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#1b2243"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/back_img_agency"/>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/login_stuff_31"
+                android:layout_alignParentEnd="true"/>
+
+            <GridView
+                android:id="@+id/agency_grid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="10dp"
+                android:layout_below="@+id/back_img_agency"
+                android:numColumns="2"
+                android:layout_margin="20dp"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:verticalSpacing="20dp"
+                tools:listitem="@layout/agency_banking_layout" />
+
+        </RelativeLayout>
+
+</RelativeLayout>

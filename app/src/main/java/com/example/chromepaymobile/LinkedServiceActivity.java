@@ -475,8 +475,7 @@ public class LinkedServiceActivity extends AppCompatActivity {
 
                                     if (status == true){
                                         Toast.makeText(LinkedServiceActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(LinkedServiceActivity.this, CustomerDashBoardActivity.class);
-                                        startActivity(intent);
+                                       SuccesDialog();
                                     }else {
                                         Toast.makeText(LinkedServiceActivity.this, ""+msg, Toast.LENGTH_SHORT).show();
                                     }
@@ -524,6 +523,37 @@ public class LinkedServiceActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+    }
+
+    public void SuccesDialog(){
+
+        final Dialog linkDialog = new Dialog(LinkedServiceActivity.this, android.R.style.Theme_Translucent_NoTitleBar);
+        View linkView = getLayoutInflater().inflate(R.layout.did_success_dialog_layout, null);
+
+
+        MaterialButton button = (MaterialButton) linkView.findViewById(R.id.ok_btn);
+        ImageView imageView = (ImageView) linkView.findViewById(R.id.dis_dialog);
+
+        linkDialog.setContentView(linkView);
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LinkedServiceActivity.this, AgentDashActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linkDialog.dismiss();
+            }
+        });
+
+        linkDialog.show();
     }
 
 

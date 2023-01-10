@@ -9,14 +9,20 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.chromepaymobile.Api.Network.AllUrl;
@@ -30,24 +36,34 @@ import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.StackedValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
+import java.time.Year;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AgentPerformenceActivity extends AppCompatActivity {
 
     BarChart barChart;
     BarData barData;
     BarDataSet barDataSet;
-    int dec,jan, feb, mar, apr, may, june, july, aug, sep, oct, nov, december;
+    int  dec,jan, feb, mar, apr, may, june, july, aug, sep, oct, nov, december;
+    int year1,year2, year3, year4, year5, year6, year7, year8, year9;
+    int friday,saturday, sunday, monday, tuesday, wednesday, thursday;
     TextView name, userNumber, agEmail, location, transaction;
-    ImageView backImage;
+    ImageView backImage, imageProfile;
+    Spinner spinner;
+    String filter;
 
     ArrayList barEntriesArrayList = new ArrayList<>();
+    List<String> select_filter = new ArrayList<String>();
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +76,8 @@ public class AgentPerformenceActivity extends AppCompatActivity {
         userNumber = findViewById(R.id.up_status_text);
         transaction = findViewById(R.id.down_status_text);
         backImage = findViewById(R.id.back_img_ap);
+        imageProfile = findViewById(R.id.image_profile_all_did);
+        spinner = findViewById(R.id.sp_filter);
 
 
         backImage.setOnClickListener(new View.OnClickListener() {
@@ -69,10 +87,36 @@ public class AgentPerformenceActivity extends AppCompatActivity {
             }
         });
 
+        select_filter.add("Year");
+        select_filter.add("Month");
+        select_filter.add("Day");
+
+        ArrayAdapter FilterList = new ArrayAdapter(this,android.R.layout.simple_spinner_item,
+                select_filter);
+
+        FilterList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(FilterList);
+
+        String selecton = "Month";
+        int spinnerPosition = FilterList.getPosition(selecton);
+        spinner.setSelection(spinnerPosition);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                filter = spinner.getSelectedItem().toString();
+                System.out.println(filter);
+                getDataEntries();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         AgentDashApi();
-
-        getDataEntries();
-
 
     }
 
@@ -82,6 +126,13 @@ public class AgentPerformenceActivity extends AppCompatActivity {
         try {
 
             RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("filter",filter);
+
+            System.out.println("jsonBody"+jsonBody);
+
+            final String mRequestBody = jsonBody.toString();
 
             SharedPreferences sharedPreferences = getSharedPreferences("LoginPreferences",MODE_PRIVATE);
             String token = sharedPreferences.getString("token","");
@@ -95,73 +146,188 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
 
-                        JSONObject object = jsonObject.getJSONObject("obj");
 
-                        dec = object.getInt("January");
-                        jan = object.getInt("February");
-                        feb = object.getInt("March");
-                        mar = object.getInt("April");
-                        apr = object.getInt("May");
-                        may = object.getInt("June");
-                        june = object.getInt("July");
-                        july = object.getInt("August");
-                        aug = object.getInt("September");
-                        sep = object.getInt("October");
-                        oct = object.getInt("November");
-                        nov = object.getInt("December");
+                            if (jsonObject.has("Year")) {
 
+                                JSONObject object = jsonObject.getJSONObject("Year");
 
-
-                        ArrayList<String> xAxisLabel = new ArrayList<>();
-
-                        xAxisLabel.add("Dec");
-                        xAxisLabel.add("Jan");
-                        xAxisLabel.add("Feb");
-                        xAxisLabel.add("Mar");
-                        xAxisLabel.add("Apr");
-                        xAxisLabel.add("May");
-                        xAxisLabel.add("June");
-                        xAxisLabel.add("July");
-                        xAxisLabel.add("Aug");
-                        xAxisLabel.add("Sep");
-                        xAxisLabel.add("Oct");
-                        xAxisLabel.add("Nov");
-                        xAxisLabel.add("Dec");
-
-                        XAxis xAxis = barChart.getXAxis();
-                        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisLabel));
-                        xAxis.setGranularityEnabled(true);
-
-                        barEntriesArrayList.add(new BarEntry(0, dec));
-                        barEntriesArrayList.add(new BarEntry(1, jan));
-                        barEntriesArrayList.add(new BarEntry(2, feb));
-                        barEntriesArrayList.add(new BarEntry(3, mar));
-                        barEntriesArrayList.add(new BarEntry(4, apr));
-                        barEntriesArrayList.add(new BarEntry(5, may));
-                        barEntriesArrayList.add(new BarEntry(6, june));
-                        barEntriesArrayList.add(new BarEntry(7, july));
-                        barEntriesArrayList.add(new BarEntry(8, aug));
-                        barEntriesArrayList.add(new BarEntry(9, sep));
-                        barEntriesArrayList.add(new BarEntry(10, oct));
-                        barEntriesArrayList.add(new BarEntry(11, nov));
-                        barEntriesArrayList.add(new BarEntry(12, december));
-
-                        barDataSet = new BarDataSet(barEntriesArrayList,"");
-                        barData = new BarData(barDataSet);
-
-                        barChart.setData(barData);
-                        barDataSet.setColors(getResources().getColor(R.color.teal_700));
-                        barDataSet.setValueTextColor(Color.BLACK);
-                        barDataSet.setValueTextSize(10f);
-                        barChart.getDescription().setEnabled(false);
-
-                        barChart.setTouchEnabled(true);
-                        barChart.getXAxis().setDrawGridLines(false);
+                                year1 = object.getInt("2018");
+                                year2 = object.getInt("2019");
+                                year3 = object.getInt("2020");
+                                year4 = object.getInt("2021");
+                                year5 = object.getInt("2022");
+                                year6 = object.getInt("2023");
+                                year7 = object.getInt("2024");
+                                year8 = object.getInt("2025");
+                                year9 = object.getInt("2026");
 
 
-                        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-                        barChart.notifyDataSetChanged();
-                        barChart.invalidate();
+                                ArrayList<String> xAxisLabel = new ArrayList<>();
+
+                                xAxisLabel.add("2018");
+                                xAxisLabel.add("2019");
+                                xAxisLabel.add("2020");
+                                xAxisLabel.add("2021");
+                                xAxisLabel.add("2022");
+                                xAxisLabel.add("2023");
+                                xAxisLabel.add("2024");
+                                xAxisLabel.add("2025");
+
+                                XAxis xAxis = barChart.getXAxis();
+                                xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisLabel));
+                                xAxis.setGranularityEnabled(true);
+
+                                barEntriesArrayList.add(new BarEntry(0, year1));
+                                barEntriesArrayList.add(new BarEntry(1, year2));
+                                barEntriesArrayList.add(new BarEntry(2, year3));
+                                barEntriesArrayList.add(new BarEntry(3, year4));
+                                barEntriesArrayList.add(new BarEntry(4, year5));
+                                barEntriesArrayList.add(new BarEntry(5, year6));
+                                barEntriesArrayList.add(new BarEntry(6, year7));
+                                barEntriesArrayList.add(new BarEntry(7, year8));
+                                barEntriesArrayList.add(new BarEntry(8, year9));
+
+
+                                barDataSet = new BarDataSet(barEntriesArrayList, "");
+                                barData = new BarData(barDataSet);
+
+                                barChart.setData(barData);
+                                barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                                barDataSet.setValueTextColor(Color.BLACK);
+                                barDataSet.setValueTextSize(10f);
+                                barChart.getDescription().setEnabled(false);
+
+                                barChart.setTouchEnabled(true);
+                                barChart.getXAxis().setDrawGridLines(false);
+
+
+                                barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+                                barChart.notifyDataSetChanged();
+                                barChart.invalidate();
+                            }
+
+                        if (jsonObject.has("Month")) {
+
+                            JSONObject object = jsonObject.getJSONObject("Month");
+                            dec = object.getInt("January");
+                            jan = object.getInt("February");
+                            feb = object.getInt("March");
+                            mar = object.getInt("April");
+                            apr = object.getInt("May");
+                            may = object.getInt("June");
+                            june = object.getInt("July");
+                            july = object.getInt("August");
+                            aug = object.getInt("September");
+                            sep = object.getInt("October");
+                            oct = object.getInt("November");
+                            nov = object.getInt("December");
+
+
+                            ArrayList<String> xAxisLabel = new ArrayList<>();
+
+                            xAxisLabel.add("Dec");
+                            xAxisLabel.add("Jan");
+                            xAxisLabel.add("Feb");
+                            xAxisLabel.add("Mar");
+                            xAxisLabel.add("Apr");
+                            xAxisLabel.add("May");
+                            xAxisLabel.add("June");
+                            xAxisLabel.add("July");
+                            xAxisLabel.add("Aug");
+                            xAxisLabel.add("Sep");
+                            xAxisLabel.add("Oct");
+                            xAxisLabel.add("Nov");
+                            xAxisLabel.add("Dec");
+
+                            XAxis xAxis = barChart.getXAxis();
+                            xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisLabel));
+                            xAxis.setGranularityEnabled(true);
+
+                            barEntriesArrayList.add(new BarEntry(0, dec));
+                            barEntriesArrayList.add(new BarEntry(1, jan));
+                            barEntriesArrayList.add(new BarEntry(2, feb));
+                            barEntriesArrayList.add(new BarEntry(3, mar));
+                            barEntriesArrayList.add(new BarEntry(4, apr));
+                            barEntriesArrayList.add(new BarEntry(5, may));
+                            barEntriesArrayList.add(new BarEntry(6, june));
+                            barEntriesArrayList.add(new BarEntry(7, july));
+                            barEntriesArrayList.add(new BarEntry(8, aug));
+                            barEntriesArrayList.add(new BarEntry(9, sep));
+                            barEntriesArrayList.add(new BarEntry(10, oct));
+                            barEntriesArrayList.add(new BarEntry(11, nov));
+                            barEntriesArrayList.add(new BarEntry(12, december));
+
+                            barDataSet = new BarDataSet(barEntriesArrayList, "");
+                            barData = new BarData(barDataSet);
+
+                            barChart.setData(barData);
+                            barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                            barDataSet.setValueTextColor(Color.BLACK);
+                            barDataSet.setValueTextSize(10f);
+                            barChart.getDescription().setEnabled(false);
+
+                            barChart.setTouchEnabled(true);
+                            barChart.getXAxis().setDrawGridLines(false);
+
+
+                            barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+                            barChart.notifyDataSetChanged();
+                            barChart.invalidate();
+                        }
+
+                        if (jsonObject.has("Day")) {
+
+                            JSONObject object = jsonObject.getJSONObject("Day");
+                            monday = object.getInt("Monday");
+                            tuesday = object.getInt("Tuseday");
+                            wednesday = object.getInt("Wednesday");
+                            thursday = object.getInt("Thrusday");
+                            friday = object.getInt("Friday");
+                            saturday = object.getInt("Saturday");
+                            sunday = object.getInt("Sunday");
+
+
+                            ArrayList<String> xAxisLabel = new ArrayList<>();
+
+                            xAxisLabel.add("Mon");
+                            xAxisLabel.add("Tue");
+                            xAxisLabel.add("Wednes");
+                            xAxisLabel.add("Thu");
+                            xAxisLabel.add("Fri");
+                            xAxisLabel.add("Sat");
+                            xAxisLabel.add("Sun");
+
+
+                            XAxis xAxis = barChart.getXAxis();
+                            xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisLabel));
+                            xAxis.setGranularityEnabled(true);
+
+                            barEntriesArrayList.add(new BarEntry(0, monday));
+                            barEntriesArrayList.add(new BarEntry(1, tuesday));
+                            barEntriesArrayList.add(new BarEntry(2, wednesday));
+                            barEntriesArrayList.add(new BarEntry(3, thursday));
+                            barEntriesArrayList.add(new BarEntry(4, friday));
+                            barEntriesArrayList.add(new BarEntry(5, saturday));
+                            barEntriesArrayList.add(new BarEntry(6, sunday));
+
+                            barDataSet = new BarDataSet(barEntriesArrayList, "");
+                            barData = new BarData(barDataSet);
+
+                            barChart.setData(barData);
+                            barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                            barDataSet.setValueTextColor(Color.BLACK);
+                            barDataSet.setValueTextSize(10f);
+                            barChart.getDescription().setEnabled(false);
+
+                            barChart.setTouchEnabled(true);
+                            barChart.getXAxis().setDrawGridLines(false);
+
+
+                            barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+                            barChart.notifyDataSetChanged();
+                            barChart.invalidate();
+                        }
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -172,7 +338,30 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(AgentPerformenceActivity.this, ""+error, Toast.LENGTH_SHORT).show();
                         }
-                    });
+                    })
+            {
+                @Override
+                public String getBodyContentType() {
+                    return "application/json; charset=utf-8";
+                }
+
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return mRequestBody == null ? null : mRequestBody.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", mRequestBody, "utf-8");
+                        return null;
+                    }
+                }
+
+                @Override
+                protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                    int mStatusCode = response.statusCode;
+                    return super.parseNetworkResponse(response);
+                }
+
+            };
 
             requestQueue.add(stringRequest);
 
@@ -200,6 +389,7 @@ public class AgentPerformenceActivity extends AppCompatActivity {
 
                         boolean status = jsonObject.getBoolean("status");
                         String NumberOFUser = jsonObject.getString("NumberOFUser");
+                        String image = jsonObject.getString("image");
                         String agentName = jsonObject.getString("agentName");
                         String email = jsonObject.getString("email");
                         String country = jsonObject.getString("country");
@@ -212,7 +402,11 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                             agEmail.setText(email);
                             userNumber.setText(NumberOFUser);
                             transaction.setText(totalTransection);
-
+                            Picasso.get()
+                                    .load(image)
+                                    .placeholder(R.drawable.all_dids_06)
+                                    .fit()
+                                    .into(imageProfile);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
