@@ -66,32 +66,41 @@ public class FinancialActivitiesFragment extends Fragment {
 
                         boolean status = jsonObject.getBoolean("status");
 
-                        JSONObject object = jsonObject.getJSONObject("obj1");
+                        if (status == true) {
+                            JSONObject object = jsonObject.getJSONObject("obj1");
 
-                        int reciving_amount = object.getInt("reciving_amount_per");
-                        int bills_amount = object.getInt("bills_amount_per");
-                        int recharge_amount = object.getInt("recharge_amount_per");
-                        int loan_amount = object.getInt("Loan_amount_per");
+                            int reciving_amount = object.getInt("reciving_amount_per");
+                            int bills_amount = object.getInt("bills_amount_per");
+                            int recharge_amount = object.getInt("recharge_amount_per");
+                            int loan_amount = object.getInt("Loan_amount_per");
 
-                        ArrayList<PieEntry> records = new ArrayList<>();
+                            ArrayList<PieEntry> records = new ArrayList<>();
 
-                        records.add(new PieEntry(reciving_amount,"reciving_amount"));
-                        records.add(new PieEntry(bills_amount, "bills_amount"));
-                        records.add(new PieEntry(recharge_amount, "recharge_amount"));
-                        records.add(new PieEntry(loan_amount, "Loan_amount"));
+                            if (reciving_amount != 0) {
+                                records.add(new PieEntry(reciving_amount, "Receiving Amount"));
+                            }
+                            if (bills_amount != 0) {
+                                records.add(new PieEntry(bills_amount, "Bills Amount"));
+                            }
+                            if (recharge_amount !=0){
+                                records.add(new PieEntry(recharge_amount, "Recharge Amount"));
+                            }
+                            if (loan_amount !=0) {
+                                records.add(new PieEntry(loan_amount, "Loan Amount"));
+                            }
+                            PieDataSet dataSet = new PieDataSet(records, "Pie Chart Report");
+                            dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                            dataSet.setValueTextColor(Color.BLACK);
+                            dataSet.setValueTextSize(14f);
 
-                        PieDataSet dataSet = new PieDataSet(records,"Pie Chart Report");
-                        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-                        dataSet.setValueTextColor(Color.BLACK);
-                        dataSet.setValueTextSize(14f);
+                            PieData pieData = new PieData(dataSet);
 
-                        PieData pieData = new PieData(dataSet);
-
-                        pieChart.setData(pieData);
-                        /*pieChart.getDescription().setEnabled(true);*/
-                        pieChart.setCenterText("Financial Activities");
-                        pieChart.setCenterTextSize(18);
-
+                            pieChart.setData(pieData);
+                            pieChart.getData();
+                            /*pieChart.getDescription().setEnabled(true);*/
+                            pieChart.setCenterText("Financial Activities");
+                            pieChart.setCenterTextSize(18);
+                        }
                     }catch (Exception e){
                         e.printStackTrace();
                     }

@@ -36,6 +36,7 @@ import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.StackedValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.scanlibrary.R;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;

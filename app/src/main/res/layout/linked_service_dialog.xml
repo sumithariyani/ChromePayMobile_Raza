@@ -23,13 +23,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="This customer already has an active D-ID. Would you like to link it to other services?"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="16dp"
+            android:layout_centerInParent="true"
             android:layout_marginHorizontal="40dp"
             android:fontFamily="@font/opensans_regular"
-            android:layout_centerInParent="true"/>
+            android:gravity="center"
+            android:text="This customer already has an active D-ID. Would you like to link it to other services?"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_marginBottom="10dp"
