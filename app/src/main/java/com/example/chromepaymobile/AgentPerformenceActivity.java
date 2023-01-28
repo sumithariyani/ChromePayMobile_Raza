@@ -68,17 +68,17 @@ public class AgentPerformenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agent_performence);
+        setContentView(com.example.chromepaymobile.R.layout.activity_agent_performence);
 
-        barChart = findViewById(R.id.bar_chart);
-        name = findViewById(R.id.agent_name_tv);
-        agEmail = findViewById(R.id.email_ap);
-        location = findViewById(R.id.agent_location_tv);
-        userNumber = findViewById(R.id.up_status_text);
-        transaction = findViewById(R.id.down_status_text);
-        backImage = findViewById(R.id.back_img_ap);
-        imageProfile = findViewById(R.id.image_profile_all_did);
-        spinner = findViewById(R.id.sp_filter);
+        barChart = findViewById(com.example.chromepaymobile.R.id.bar_chart);
+        name = findViewById(com.example.chromepaymobile.R.id.agent_name_tv);
+        agEmail = findViewById(com.example.chromepaymobile.R.id.email_ap);
+        location = findViewById(com.example.chromepaymobile.R.id.agent_location_tv);
+        userNumber = findViewById(com.example.chromepaymobile.R.id.up_status_text);
+        transaction = findViewById(com.example.chromepaymobile.R.id.down_status_text);
+        backImage = findViewById(com.example.chromepaymobile.R.id.back_img_ap);
+        imageProfile = findViewById(com.example.chromepaymobile.R.id.image_profile_all_did);
+        spinner = findViewById(com.example.chromepaymobile.R.id.sp_filter);
 
 
         backImage.setOnClickListener(new View.OnClickListener() {
@@ -193,7 +193,7 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                                 barData = new BarData(barDataSet);
 
                                 barChart.setData(barData);
-                                barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                                barDataSet.setColors(getResources().getColor(com.example.chromepaymobile.R.color.teal_700));
                                 barDataSet.setValueTextColor(Color.BLACK);
                                 barDataSet.setValueTextSize(10f);
                                 barChart.getDescription().setEnabled(false);
@@ -262,7 +262,7 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                             barData = new BarData(barDataSet);
 
                             barChart.setData(barData);
-                            barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                            barDataSet.setColors(getResources().getColor(com.example.chromepaymobile.R.color.teal_700));
                             barDataSet.setValueTextColor(Color.BLACK);
                             barDataSet.setValueTextSize(10f);
                             barChart.getDescription().setEnabled(false);
@@ -315,7 +315,7 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                             barData = new BarData(barDataSet);
 
                             barChart.setData(barData);
-                            barDataSet.setColors(getResources().getColor(R.color.teal_700));
+                            barDataSet.setColors(getResources().getColor(com.example.chromepaymobile.R.color.teal_700));
                             barDataSet.setValueTextColor(Color.BLACK);
                             barDataSet.setValueTextSize(10f);
                             barChart.getDescription().setEnabled(false);
@@ -405,7 +405,7 @@ public class AgentPerformenceActivity extends AppCompatActivity {
                             transaction.setText(totalTransection);
                             Picasso.get()
                                     .load(image)
-                                    .placeholder(R.drawable.all_dids_06)
+                                    .placeholder(com.example.chromepaymobile.R.drawable.all_dids_06)
                                     .fit()
                                     .into(imageProfile);
                         }
