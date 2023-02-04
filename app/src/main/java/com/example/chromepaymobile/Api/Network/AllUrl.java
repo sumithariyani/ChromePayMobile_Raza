@@ -20,7 +20,7 @@ public class AllUrl {
 
     public static final String AgentProfile = BaseUrl+"agentProfile/";
 
-    public static final String UpdateProfile = BaseUrl+"agentProfileUpdate/";
+    public static final String UpdateProfile = BaseUrl+"c";
 
     public static final String AgentCommission = BaseUrl+"commissionlist/";
 
